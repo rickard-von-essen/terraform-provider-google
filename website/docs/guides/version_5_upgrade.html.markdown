@@ -997,7 +997,6 @@ resource "google_secret_manager_secret" "my-secret" {
 }
 ```
 
-
 ## Resource: `google_sql_database`
 
 ### `database_flags` is now a set
@@ -1005,4 +1004,3 @@ resource "google_secret_manager_secret" "my-secret" {
 Previously, `database_flags` was a list, making it order-dependent. It is now a set.
 
 If you were relying on accessing an individual flag by index (for example, `google_sql_database_instance.instance.settings.0.database_flags.0.name`), then that will now need to by hash (for example, `google_sql_database_instance.instance.settings.0.database_flags.<some-hash>.name`).
-
